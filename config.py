@@ -1,13 +1,17 @@
 # config.py
 # ----------------------------------------------------------------------
-# Put your bot token below (get it from @BotFather).
-# Add the Telegram user IDs that are allowed to control the bot.
+# Multi-User Announcement Bot Configuration
+# No admin authentication - everyone can use the bot!
+# Each user gets their own private control panel.
 # ----------------------------------------------------------------------
 
-BOT_TOKEN = "8671669994:AAH53wveuygHM-2R_uu1eWVzJ3c7IDB8VJc"
+import os
+from dotenv import load_dotenv
 
-# Telegram user IDs allowed to use the private control panel.
-# You can get your own ID from @userinfobot on Telegram.
-ADMIN_IDS = [
-    7601173744,  # <-- replace with your Telegram user ID
-]
+load_dotenv()
+
+# Bot token from environment or direct assignment
+BOT_TOKEN = os.getenv("BOT_TOKEN", "8671669994:AAH53wveuygHM-2R_uu1eWVzJ3c7IDB8VJc")
+
+# No authentication needed - multi-user bot!
+# Each user can add their own groups and send announcements
